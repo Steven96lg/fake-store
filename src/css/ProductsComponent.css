@@ -1,0 +1,86 @@
+
+.products-component{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 120px auto;
+}
+
+.products-component .products-info h3, p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.products-component .products-info h3{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.products-component .products-info p{
+    font-size: 18px;
+    color: gray;
+}
+
+.products-component .product-list{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.product-box{
+    padding: 30px 30px 10px 30px;
+    box-shadow: 0px 0px 3px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-box .img-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.product-box img{
+    width: 180px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.product-box .info-product{
+    margin-top: 10px;
+}
+
+.product-box .info-product p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+    text-align: start;
+}
+
+.product-box .info-product strong{
+    font-size: 28px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+}
+
+.product-box .info-product .cart-box{
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+.product-box .info-product .cart-box .btn-add-to-cart{
+    background-color: black;
+    outline: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}

@@ -1,0 +1,85 @@
+
+.cart-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    min-height: 70vh;
+}
+
+.cart-component h2{
+    font-weight: 200;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cart-content{
+    width: 80%;
+    padding: 10px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cart-content .product-list{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+}
+
+.cart-content .product-list .product-card{
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    border-top: 1px solid black;
+    width: 75%;
+}
+
+.cart-content .product-list .product-card .img-product{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cart-content .product-list .product-card .img-product img{
+    width: 60px;
+    object-fit: contain;
+}
+
+.cart-content .product-list .product-card .info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-content .product-list .product-card .info-card .info-card-name span{
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cart-content .product-list .product-card .info-card .info-card-price{
+    margin-bottom: 10px;
+}
+
+.cart-content .product-list .product-card .info-card .info-card-price strong{
+    color: gray;
+  
+    font-size: 20px;
+}
+
+.cart-content .product-list .product-card .info-card .info-card-price .add-btn, .delete-btn{
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+
+.delete-btn{
+    color: gray;
+}

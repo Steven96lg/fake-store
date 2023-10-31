@@ -1,0 +1,28 @@
+
+.footer-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background-color: rgb(238, 238, 238);
+}
+
+.footer-component strong{
+    color: gray;
+    font-weight: 200;
+}
+
+.footer-component strong a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.footer-component strong a:hover{
+    text-decoration: none;
+    color: black;
+    text-decoration: line-through;
+}
