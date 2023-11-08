@@ -79,7 +79,19 @@
     border: none;
 }
 
-
 .delete-btn{
     color: gray;
+}
+
+.product-info{
+    display: flex;
+    justify-content: center;
+}
+
+.product-info .info-price{
+    padding: 20px;
+    box-shadow: 0px 0px 5px black;
+    max-height: 180px;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
 }

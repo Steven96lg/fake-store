@@ -6,6 +6,11 @@ import { useContext } from 'react';
 const CartComponent = () => {
 
     const { productCart } = useContext(CartContext);
+    let totalPrice = 0;
+    productCart.map(product => {
+        totalPrice += product.price
+    });
+    console.log(totalPrice)
 
     return(
         <div className='cart-component'>
@@ -15,7 +20,7 @@ const CartComponent = () => {
                 <div className="product-list">
                     {
                         productCart.map(product => (
-                            <div className="product-card">
+                            <div className="product-card" key={product.id}>
                                 <div className='img-product'>
                                     <img src={product.image} alt={product.title} />
                                 </div>
@@ -35,7 +40,15 @@ const CartComponent = () => {
                     }
                 </div>
                 <div className="product-info">
-
+                   { productCart.length > 0 ?
+                     <div className="info-price">
+                        <span>Total de productos: {productCart.length}</span>
+                        <br />
+                        <br />
+                        <span>Total a pagar: ${totalPrice}</span>
+                    </div> 
+                    : ''
+                   }
                 </div>
             </div>
         </div>
