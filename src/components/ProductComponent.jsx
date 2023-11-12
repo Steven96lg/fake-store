@@ -10,9 +10,22 @@ const ProductComponent = ({id, title, price, img}) => {
     
     const getProduct = () => {
         let productToCart = products.find(product => product.id === id);
+        
         if (productToCart) {
-            setProductCart([...productCart, {...productToCart}]);
+            // Verificar si el producto ya está en el carrito
+            const existingProductIndex = productCart.findIndex(item => item.id === id);
+
+            if (existingProductIndex !== -1) {
+                // Si el producto ya está en el carrito, actualiza la cantidad
+                const updatedProductCart = [...productCart];
+                updatedProductCart[existingProductIndex].quantity += 1;
+                setProductCart(updatedProductCart);
+            } else {
+                // Si el producto no está en el carrito, agrégalo
+                setProductCart([...productCart, { ...productToCart, quantity: 1 }]);
+            }
         }
+        
     }
 
     return(

@@ -7,6 +7,10 @@ import '../css/HeaderComponent.css';
 
 const HeaderComponent = () => {
     const { productCart } = useContext(CartContext);
+    let totalArticles = 0;
+    productCart.map(product => {
+        totalArticles += product.quantity;
+    });
     return(
         <div className="header-component">
             <div className="header-content">
@@ -22,7 +26,7 @@ const HeaderComponent = () => {
                     </li>
                     <li className='li-content'>
                         <Link to="/cart"><i className="fas fa-shopping-cart"></i></Link>
-                        {productCart.length > 0 ? <strong className="notification-product"> {productCart.length} </strong> : ''}
+                        {totalArticles > 0 ? <strong className="notification-product"> {totalArticles} </strong> : ''}
                     </li>
                 </ul>
             </div>

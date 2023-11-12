@@ -1,21 +1,22 @@
 
 import CartContext from './CartContext';
 import '../css/CartComponent.css'
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const CartComponent = () => {
 
     const { productCart } = useContext(CartContext);
     let totalPrice = 0;
+    let totalArticles = 0;
     productCart.map(product => {
-        totalPrice += product.price
+        totalPrice += product.price * product.quantity;
+        totalArticles += product.quantity;
     });
-    console.log(totalPrice)
 
     return(
         <div className='cart-component'>
             <h2>Carrito de Compras</h2>
-
+            { productCart.length === 0 ? <p>Aun no tienes productos en tu carrito de compras.</p> : null }
             <div className="cart-content">
                 <div className="product-list">
                     {
@@ -28,7 +29,7 @@ const CartComponent = () => {
                                     <div className='info-card-price'>
                                         <strong>$ {product.price}</strong>
                                         <button className='add-btn'><i className="fas fa-plus-circle"></i></button>
-                                        <span> Catidad: 0</span> 
+                                        <span> Catidad: {product.quantity}</span> 
                                         <button className='delete-btn'><i className="fas fa-trash"></i></button>
                                     </div>
                                     <div className="info-card-name">
@@ -42,11 +43,11 @@ const CartComponent = () => {
                 <div className="product-info">
                    { productCart.length > 0 ?
                      <div className="info-price">
-                        <span>Total de productos: {productCart.length}</span>
+                        <span>Total de productos: {totalArticles}</span>
                         <br />
                         <br />
-                        <span>Total a pagar: ${totalPrice}</span>
-                    </div> 
+                        <span>Total a pagar: ${totalPrice.toFixed(2)}</span>
+                     </div> 
                     : ''
                    }
                 </div>
