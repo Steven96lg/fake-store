@@ -29,7 +29,7 @@ function App() {
       productCart,
       setProductCart
       }}>
-      <div>
+      <div className="app">
         <BannerComponent />
         <RouterComponent />
         <FooterComponent />
